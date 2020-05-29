@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "goty-2bb22": {
+      "hosting": {
+        "goty": [
+          "goty-2bb22"
+        ]
+      }
+    }
+  }
+}

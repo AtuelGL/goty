@@ -1,30 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, Input } from '@angular/core';
 
 @Component({
   selector: 'app-grafico-barrra-horizontal',
   templateUrl: './grafico-barrra-horizontal.component.html',
   styleUrls: ['./grafico-barrra-horizontal.component.css']
 })
-export class GraficoBarrraHorizontalComponent {
+export class GraficoBarrraHorizontalComponent implements OnDestroy {
 
-  results: any[] =[
-    {
-      "name": "Juego1",
-      "value": 10
-    },
-    {
-      "name": "Juxego2",
-      "value": 25
-    },
-    {
-      "name": "Juego3",
-      "value": 5
-    },
-    {
-      "name": "Juego4",
-      "value": 30
-    }
-  ];
+  @Input() results: any[] = [];
+
+  // results: any[] = [
+  //   {
+  //     "name": "Juego 1",
+  //     "value": 10
+  //   },
+  //   {
+  //     "name": "Juego 2",
+  //     "value": 25
+  //   },
+  //   {
+  //     "name": "Juego 3",
+  //     "value": 5
+  //   },
+  //   {
+  //     "name": "Juego 4",
+  //     "value": 30
+  //   }
+  // ];
 
   // options
   showXAxis = true;
@@ -38,10 +40,28 @@ export class GraficoBarrraHorizontalComponent {
 
   colorScheme = 'nightLights';
 
-  constructor() {}
+  // intervalo;
+
+  constructor() {
+
+    // this.intervalo = setInterval( () => {
+
+    //   const newResults = [...this.results];
+
+    //   // tslint:disable-next-line: forin
+    //   for (let i in newResults){
+    //     newResults[i].value = Math.round(Math.random() * 500);
+    //   }
+    //   this.results = [...newResults]
+    // }, 1500);
+  }
 
   onSelect(event) {
     console.log(event);
+  }
+
+  ngOnDestroy(){
+    // clearInterval(this.intervalo);
   }
 
 }
